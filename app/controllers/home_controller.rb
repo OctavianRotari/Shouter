@@ -1,7 +1,16 @@
 class HomeController < ApplicationController
 
-  before_action :authenticate_user!
+  before_filter :check_logged_in_user
 
-  def index
+  def show
   end
+
+  private
+
+  def check_logged_in_user
+    if signed_in?
+      redirect_to dashboard_path
+    end
+  end
+
 end
