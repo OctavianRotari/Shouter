@@ -13,10 +13,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'rake'
 gem 'omniauth-facebook'
-gem 'omniauth-gplus'
+gem 'omniauth-google-oauth2'
+gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 
-
-group :development, :test do
+group :development do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
