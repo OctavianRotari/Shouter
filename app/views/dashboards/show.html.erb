@@ -1,2 +1,9 @@
 <h2>Hello <%= current_user.name %>.</h2>
+<%= form_for @shout do |form| %>
+	<%= form.text_field :body, placeholder: "Shout content here" %>
+	<%= form.submit "Shout!" %>
+<%end%>
+
+<%= render @shouts%>
+
 This is your personal dashboard

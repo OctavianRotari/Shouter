@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   root to: "home#show", via: :get
 
   resource :dashboard, only: [:show]
+  resources :users, only: [:show]
+  resources :shouts, only: [:create, :show]
+
 end
