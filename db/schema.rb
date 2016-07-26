@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160725112021) do
+ActiveRecord::Schema.define(version: 20160726095113) do
 
   create_table "sessions", force: :cascade do |t|
     t.string   "session_id", null: false
@@ -22,11 +22,17 @@ ActiveRecord::Schema.define(version: 20160725112021) do
   end
 
   create_table "shouts", force: :cascade do |t|
-    t.string   "body"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "content_type"
+    t.integer  "content_id"
+    t.index ["content_type", "content_id"], name: "index_shouts_on_content_type_and_content_id"
     t.index ["user_id"], name: "index_shouts_on_user_id"
+  end
+
+  create_table "text_shouts", force: :cascade do |t|
+    t.string "body"
   end
 
   create_table "users", force: :cascade do |t|
