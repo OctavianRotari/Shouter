@@ -16,6 +16,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 gem 'record_tag_helper'
+gem 'paperclip'
 
 group :development do
   gem 'byebug'
