@@ -9,8 +9,9 @@ Rails.application.routes.draw do
   root to: "home#show", via: :get
 
   resource :dashboard, only: [:show]
-  resources :users, only: [:show] do 
+  resources :users, only: [:show, :index] do 
     post 'follow' => 'following_relationships#create'
+    delete 'unfollow' => 'following_relationships#destroy'
   end
   resources :shouts, only: [:show]
   resources :text_shouts, only: [:create]
