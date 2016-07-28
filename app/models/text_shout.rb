@@ -4,4 +4,5 @@ class TextShout < ApplicationRecord
   def index
     body
   end
+
 end
