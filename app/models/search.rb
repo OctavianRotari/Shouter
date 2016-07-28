@@ -32,6 +32,6 @@ class Search
   def search_through_all
     Shout.search do
       fulltext term
-    end
+    end.results
   end
 end
